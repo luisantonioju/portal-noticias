@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('noticias', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->text('resumo');
+            $table->longtext('conteudo');
+            $table->string('imagem');
+            $table->boolean('ativo')->default(false);
+
+            $table->foreignId('categoria_id')->constrained();
+            $table->foreignId('usuario_id')->constrained();
+
             $table->timestamps();
         });
     }
