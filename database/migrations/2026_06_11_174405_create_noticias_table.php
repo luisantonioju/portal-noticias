@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->text('resumo');
-            $table->longText('conteudo');
+            $table->longtext('conteudo');
             $table->string('imagem');
             $table->boolean('ativo')->default(false);
 
