@@ -17,9 +17,9 @@
                 </div>
 
                 <div class="p-6">
-                    <table class="w-full text-sm">
+                    <table class="table">
                         <thead>
-                            <tr class="bg-gradient-to-r from-slate-700 to-slate-500 text-white text-right">
+                            <tr class="">
                                 <th>ID</th>
                                 <th>TÍTULO</th>
                                 <th>RESUMO</th>
