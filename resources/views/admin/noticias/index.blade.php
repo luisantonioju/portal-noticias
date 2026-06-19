@@ -11,7 +11,6 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100 flex justify-between items-center">
 
                     <h1 class="text-[18px] font-bold">Lista de Noticias</h1>
-                    <br>
                     <a href="#" class="bg-slate-950 text-white px-4 py-2 rounded"> Adicionar notícia</a>
 
 
