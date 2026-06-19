@@ -7,5 +7,18 @@
 }
 
 .table thead tr {
-    @apply bg-gradient-to-r from-slate-700 to-slate-500 text-white text-right;
+    @apply bg-gradient-to-r from-slate-700 to-slate-500 text-white text-left;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+}
+
+.btn-editar {
+    @apply bg-slate-300 px-2 py-1 rounded;
+}
+
+.btn-excluir {
+    @apply bg-red-500 text-white px-2 py-1 rounded;
 }

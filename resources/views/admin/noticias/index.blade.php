@@ -16,34 +16,52 @@
 
                 </div>
 
-                <div class="p-6">
+                <div class="p-6 overflow-x-auto">
                     <table class="table">
                         <thead>
-                            <tr class="">
+                            <tr>
                                 <th>ID</th>
                                 <th>TÍTULO</th>
-                                <th>RESUMO</th>
-                                <th>CATEGORIA</th>
+                                <th class="hidden sm:table-cell">RESUMO</th>
+                                <th class="hidden sm:table-cell">CATEGORIA</th>
                                 <th>PUBLICAÇÃO</th>
-                                <th>AÇÃO</th>
+                                <th class="text-center">AÇÃO</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td> 1</td>
                                 <td>Título da Notícia</td>
-                                <td>Resumo da notícia</td>
-                                <td>Tecnologia</td>
+                                <td class="hidden sm:table-cell">Resumo da notícia</td>
+                                <td class="hidden sm:table-cell">Tecnologia</td>
                                 <td>19/06/2026 14:10</td>
-                                <td>
-                                    <a href="#" class="text-blue-500 hover:text-blue-700">Editar</a>
-                                    <a href="#" class="text-red-500 hover:text-red-700">Excluir</a>
+                                <td class="text-center">
+                                    <a href="#" class="btn-editar">Editar</a>
+                                    <a href="#" class="btn-excluir">Excluir</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 1</td>
+                                <td>Título da Notícia</td>
+                                <td class="hidden sm:table-cell">Resumo da notícia</td>
+                                <td class="hidden sm:table-cell">Tecnologia</td>
+                                <td>19/06/2026 14:10</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn-editar">Editar</a>
+                                    <a href="#" class="btn-excluir">Excluir</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center" colspan="6">
+                                    <p>Nenhuma notícia cadastrada</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
 
                 </div>
+                <div class="flex justify-center p-6 pt-0">
+                    //Paginação
+                </div>
             </div>
-        </div>
 </x-app-layout>
