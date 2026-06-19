@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class NoticiaController extends Controller
@@ -12,6 +13,7 @@ class NoticiaController extends Controller
      */
     public function index()
     {
+        $noticias = Noticia::all();
         return view('admin.noticias.index');
     }
 
