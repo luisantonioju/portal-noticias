@@ -35,7 +35,11 @@
                                     <td>{{ $n->titulo }}</td>
                                     <td class="hidden sm:table-cell">{{ $n->resumo }}</td>
                                     <td class="hidden sm:table-cell">{{ $n->categoria_id }}</td>
-                                    <td>{{ $n->created_at }}</td>
+                                    <td>
+                                        {{ $n->created_at->format('d/m/Y H:i') }}
+                                        <br>
+                                        {{ $n->created_at->diffForHumans() }}
+                                    </td>
                                     <td class="text-center">
                                         <a href="#" class="btn-editar">Editar</a>
                                         <a href="#" class="btn-excluir">Excluir</a>
