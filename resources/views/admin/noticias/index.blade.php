@@ -29,33 +29,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td> 1</td>
-                                <td>Título da Notícia</td>
-                                <td class="hidden sm:table-cell">Resumo da notícia</td>
-                                <td class="hidden sm:table-cell">Tecnologia</td>
-                                <td>19/06/2026 14:10</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn-editar">Editar</a>
-                                    <a href="#" class="btn-excluir">Excluir</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td> 1</td>
-                                <td>Título da Notícia</td>
-                                <td class="hidden sm:table-cell">Resumo da notícia</td>
-                                <td class="hidden sm:table-cell">Tecnologia</td>
-                                <td>19/06/2026 14:10</td>
-                                <td class="text-center">
-                                    <a href="#" class="btn-editar">Editar</a>
-                                    <a href="#" class="btn-excluir">Excluir</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center" colspan="6">
-                                    <p>Nenhuma notícia cadastrada</p>
-                                </td>
-                            </tr>
+                            @forelse ($noticias as $n)
+                                <tr>
+                                    <td>{{ $n->id }}</td>
+                                    <td>{{ $n->titulo }}</td>
+                                    <td class="hidden sm:table-cell">{{ $n->resumo }}</td>
+                                    <td class="hidden sm:table-cell">{{ $n->categoria_id }}</td>
+                                    <td>{{ $n->created_at }}</td>
+                                    <td class="text-center">
+                                        <a href="#" class="btn-editar">Editar</a>
+                                        <a href="#" class="btn-excluir">Excluir</a>
+                                    </td>
+                                </tr>
+
+                            @empty
+
+                                <tr>
+                                    <td class="text-center" colspan="6">
+                                        <p>Nenhuma notícia cadastrada</p>
+                                    </td>
+                                </tr>
+                            @endforelse
+
+
                         </tbody>
                     </table>
 
