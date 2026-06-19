@@ -16,7 +16,32 @@
 
                 </div>
 
-                <div>
+                <div class="p-6">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-slate-700 to-slate-500 text-white text-right">
+                                <th>ID</th>
+                                <th>TÍTULO</th>
+                                <th>RESUMO</th>
+                                <th>CATEGORIA</th>
+                                <th>PUBLICAÇÃO</th>
+                                <th>AÇÃO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 1</td>
+                                <td>Título da Notícia</td>
+                                <td>Resumo da notícia</td>
+                                <td>Tecnologia</td>
+                                <td>19/06/2026 14:10</td>
+                                <td>
+                                    <a href="#" class="text-blue-500 hover:text-blue-700">Editar</a>
+                                    <a href="#" class="text-red-500 hover:text-red-700">Excluir</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div>
