@@ -11,7 +11,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100 flex justify-between items-center">
 
                     <h1 class="text-[18px] font-bold">Lista de Categorias</h1>
-                    <a href="#" class="bg-slate-950 text-white px-4 py-2 rounded"> Adicionar categoria</a>
+                    <a href="{{ route('admin.categorias.cadastrar') }}" class="bg-slate-950 text-white px-4 py-2 rounded">
+                        Adicionar categoria</a>
 
 
                 </div>
@@ -22,8 +23,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>TÍTULO</th>
-                                <th class="hidden sm:table-cell">RESUMO</th>
-                                <th class="hidden sm:table-cell">CATEGORIA</th>
+                                <th class="hidden sm:table-cell">DESCRIÇÃO</th>
+                                <th class="hidden sm:table-cell">COR</th>
                                 <th class="text-center">AÇÃO</th>
                             </tr>
                         </thead>
