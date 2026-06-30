@@ -44,7 +44,7 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view("admin.categorias.editar");
     }
 
     /**
@@ -60,6 +60,6 @@ class CategoriaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return "Funcionou . . Deletou o registro!";
     }
 }

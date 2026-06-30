@@ -25,8 +25,8 @@
                                 <th>TÍTULO</th>
                                 <th class="hidden sm:table-cell">RESUMO</th>
                                 <th class="hidden sm:table-cell">CATEGORIA</th>
-                                <th>PUBLICAÇÃO</th>
-                                <th class="text-center">AÇÃO</th>
+                                <th class="w-[130px]">PUBLICAÇÃO</th>
+                                <th class="text-center w-[130px]">AÇÃO</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,9 +41,19 @@
                                         <br>
                                         {{ $n->created_at->diffForHumans() }}
                                     </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn-editar">Editar</a>
-                                        <a href="#" class="btn-excluir">Excluir</a>
+                                    <td class="text-center flex gap-1">
+                                        <a href="{{ route('admin.noticias.editar', $n->id) }}"
+                                            class="btn-editar">Editar</a>
+
+                                        <form action="{{ route('admin.noticias.excluir', $n->id) }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+
+                                            <button type="submit" class="btn-excluir"
+                                                onclick="return confirm('Deseja excluir o registro?')">Excluir</button>
+
+                                        </form>
+
                                     </td>
                                 </tr>
 
