@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categoria;
 use App\Models\Noticia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoticiaController extends Controller
 {
@@ -36,7 +37,30 @@ class NoticiaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $request->validate([
+            'categoria_id' => 'required',
+            'titulo' => 'required|min:10|max:255',
+            'resumo' => 'required',
+            'conteudo' => 'required',
+            'imagem' => 'required|image|mimes:jpeg,png,jpg,png,webp|max:2048'
+        ]);
+
+        $noticia = new Noticia();
+        $noticia->titulo = $request->titulo;
+        $noticia->resumo = $request->resumo;
+        $noticia->conteudo = $request->conteudo;
+        $noticia->categoria_id = $request->categoria_id;
+        $noticia->ativo = $request->ativo;
+        $noticia->usuario_id = Auth::User()->id;
+
+        if ($request->hasFile('imagem')) {
+            $noticia->imagem = $request->file('imagem')->store('noticias', 'public');
+        }
+
+        $noticia->save();
+
+        return redirect()->route('admin.noticias.index');
     }
 
     /**
