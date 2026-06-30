@@ -1,6 +1,7 @@
 <div class="mb-5">
     <label for="categoria_id" class="form-label">Categoria *</label>
     <select name="categoria_id" id="categoria_id" class="form-control">
+        <option></option>
         @foreach ($categorias as $id => $nome)
             <option value="{{ $id }}">{{ $nome }}</option>
         @endforeach
