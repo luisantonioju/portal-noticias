@@ -22,7 +22,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>TÍTULO</th>
+                                <th>NOME</th>
                                 <th class="hidden sm:table-cell">DESCRIÇÃO</th>
                                 <th class="hidden sm:table-cell">COR</th>
                                 <th class="text-center w-[130px]">AÇÃO</th>
@@ -55,7 +55,7 @@
 
                                 <tr>
                                     <td class="text-center" colspan="6">
-                                        <p>Nenhuma notícia cadastrada</p>
+                                        <p>Nenhuma categoria cadastrada</p>
                                     </td>
                                 </tr>
                             @endforelse

@@ -24,6 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
+        $categoria = new Categoria();
         return view("admin.categorias.cadastrar");
     }
 
@@ -32,7 +33,22 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        $request->validate([
+            'nome' => 'required|min:10|max:255',
+            'descricao' => 'required',
+            'cor' => 'required',
+        ]);
+
+        $categoria = new Categoria();
+        $categoria->nome = $request->nome;
+        $categoria->descricao = $request->descricao;
+        $categoria->cor = $request->cor;
+        $categoria->ativo = $request->ativo;
+
+        $categoria->save();
+
+        return redirect()->route('admin.categorias.index');
     }
 
     /**
@@ -44,7 +60,12 @@ class CategoriaController extends Controller
      */
     public function edit(string $id)
     {
-        return view("admin.categorias.editar");
+
+        $categoria = Categoria::findOrFail($id);
+
+        return view("admin.categorias.editar", [
+            'categoria' => $categoria,
+        ]);
     }
 
     /**
@@ -52,14 +73,26 @@ class CategoriaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
-    }
+        $request->validate([
+            'nome' => 'required',
+            'cor'       => 'required',
+        ]);
 
+        $categoria = Categoria::findOrFail($id);
+        $categoria->nome = $request->categoria;
+        $categoria->descricao = $request->descricao;
+        $categoria->cor = $request->cor;
+        $categoria->ativo = $request->ativo;
+
+        return redirect()->route('admin.categorias.index');
+    }
     /**
      * excluir uma noticia de banco de dados.
      */
     public function destroy(string $id)
     {
-        return "Funcionou . . Deletou o registro!";
+        $categoria = Categoria::findOrFail($id);
+        $categoria->delete();
+        return redirect()->route('admin.categorias.index');
     }
 }

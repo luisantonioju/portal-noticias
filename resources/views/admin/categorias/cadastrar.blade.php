@@ -18,9 +18,11 @@
                 </div>
 
                 <div class="p-6 overflow-x-auto">
-                    <form action="#" method="post">
+                    <form action="{{ route('admin.categorias.armazenar') }}" method="post"
+                        enctype="multipart/form-data">
 
-                        @include('admin.categorias._form')
+                        @csrf
+                        @include('admin.categorias._form');
 
                     </form>
                 </div>

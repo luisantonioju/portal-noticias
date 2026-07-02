@@ -1,15 +1,29 @@
-<div class="mb-5">
-    <label for="titulo" class="form-label">Título *</label>
-    <input type="text" name="titulo" id="titulo" class="form-control">
+@if ($errors->any())
 
-</div>
+    <div class="mb-10 text-red-500">
+        <p class="font-bold">Verifique os erros abaixo:</p>
+        <ul>
+            @foreach ($errors->all() as $erro)
+                <li>- {{ $erro }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="mb-5">
-    <label for="resumo" class="form-label">Descrição *</label>
-    <input name="resumo" id="resumo" class="form-control">
+    <label for="nome" class="form-label">Nome *</label>
+    <input type="text" name="nome" id="nome" value="{{ old('nome', $categoria->nome ?? null) }}"
+        class="form-control">
 </div>
+
 <div class="mb-5">
-    <label for="conteudo" class="form-label">Cor *</label>
-    <input name="conteudo" id="conteudo" class="form-control">
+    <label for="descricao" class="form-label">Descrição</label>
+    <input type="text" name="descricao" id="descricao" value="{{ old('descricao', $categoria->descricao ?? null) }}"
+        class="form-control">
+</div>
+
+<div class="mb-5">
+    <label for="cor" class="form-label">Cor *</label>
+    <input type="text" name="cor" id="cor" value="{{ old('cor', $categoria->cor) }}" class="form-control">
 </div>
 
 <div class="mb-5">

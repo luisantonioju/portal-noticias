@@ -18,9 +18,12 @@
                 </div>
 
                 <div class="p-6 overflow-x-auto">
-                    <form action="#" method="post">
+                    <form action="{{ route('admin.categorias.atualizar', $categoria->id) }}" method="post"
+                        enctype="multipart/form-data">
+                        @method('put')
+                        @csrf
 
-                        @include('admin.categorias._form')
+                        @include('admin.categorias._form');
 
                     </form>
                 </div>
