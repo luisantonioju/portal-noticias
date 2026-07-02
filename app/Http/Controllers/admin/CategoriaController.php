@@ -24,6 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
+        $categoria = new Categoria();
         return view("admin.categorias.cadastrar");
     }
 

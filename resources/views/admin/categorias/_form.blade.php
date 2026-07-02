@@ -11,12 +11,13 @@
 @endif
 <div class="mb-5">
     <label for="nome" class="form-label">Nome *</label>
-    <input type="text" name="nome" id="nome" value="{{ old('nome', $categoria->nome) }}" class="form-control">
+    <input type="text" name="nome" id="nome" value="{{ old('nome', $categoria->nome ?? null) }}"
+        class="form-control">
 </div>
 
 <div class="mb-5">
     <label for="descricao" class="form-label">Descrição</label>
-    <input type="text" name="descricao" id="descricao" value="{{ old('descricao', $categoria->descricao) }}"
+    <input type="text" name="descricao" id="descricao" value="{{ old('descricao', $categoria->descricao ?? null) }}"
         class="form-control">
 </div>
 

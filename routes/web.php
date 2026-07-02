@@ -32,9 +32,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard/categorias', [CategoriaController::class, 'index'])->name('admin.categorias.index');
     Route::get('/dashboard/categorias/cadastrar', [CategoriaController::class, 'create'])->name('admin.categorias.cadastrar');
-    Route::post('/dashboard/noticias/cadastrar', [NoticiaController::class, "store"])->name('admin.categorias.armazenar');
+    Route::post('/dashboard/categorias/cadastrar', [CategoriaController::class, "store"])->name('admin.categorias.armazenar');
     Route::get('/dashboard/categorias/editar/{id}', [CategoriaController::class, 'edit'])->name('admin.categorias.editar');
-    Route::put('/dashboard/categorias/atualizar/{id}', [NoticiaController::class, "update"])->name('admin.categorias.atualizar');
+    Route::put('/dashboard/categorias/atualizar/{id}', [CategoriaController::class, "update"])->name('admin.categorias.atualizar');
     Route::delete('/dashboard/categorias/excluir/{id}', [CategoriaController::class, 'destroy'])->name('admin.categorias.excluir');
 });
 
