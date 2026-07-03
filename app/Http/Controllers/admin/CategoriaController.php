@@ -25,7 +25,7 @@ class CategoriaController extends Controller
     public function create()
     {
         $categoria = new Categoria();
-        return view("admin.categorias.cadastrar");
+        return view('admin.categorias.cadastrar', compact('categoria'));
     }
 
     /**
@@ -35,7 +35,7 @@ class CategoriaController extends Controller
     {
         // dd($request);
         $request->validate([
-            'nome' => 'required|min:10|max:255',
+            'nome' => 'required|max:255',
             'descricao' => 'required',
             'cor' => 'required',
         ]);
@@ -79,11 +79,12 @@ class CategoriaController extends Controller
         ]);
 
         $categoria = Categoria::findOrFail($id);
-        $categoria->nome = $request->categoria;
+        $categoria->nome = $request->nome;
         $categoria->descricao = $request->descricao;
         $categoria->cor = $request->cor;
         $categoria->ativo = $request->ativo;
 
+        $categoria->save();
         return redirect()->route('admin.categorias.index');
     }
     /**

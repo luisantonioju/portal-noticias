@@ -17,13 +17,14 @@
 
 <div class="mb-5">
     <label for="descricao" class="form-label">Descrição</label>
-    <input type="text" name="descricao" id="descricao" value="{{ old('descricao', $categoria->descricao ?? null) }}"
+    <input type="text" name="descricao" id="descricao" value="{{ old('descricao', $categoria->descricao ?? '') }}"
         class="form-control">
 </div>
 
 <div class="mb-5">
     <label for="cor" class="form-label">Cor *</label>
-    <input type="text" name="cor" id="cor" value="{{ old('cor', $categoria->cor) }}" class="form-control">
+    <input type="text" name="cor" id="cor" value="{{ old('cor', $categoria->cor ?? '') }}"
+        class="form-control">
 </div>
 
 <div class="mb-5">
