@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('resumo');
             $table->longtext('conteudo');
-            $table->string('imagem');
+            $table->string('imagem')->nullable();
             $table->boolean('ativo')->default(false);
 
             $table->foreignId('categoria_id')->constrained();
