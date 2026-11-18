@@ -23,7 +23,7 @@ class NoticiaApiController extends Controller
             $dados = $noticia->toArray();
             $dados['imagem'] = $noticia->imagem ? $urlBase . '/' . $noticia->imagem : null;
             $dados['categoria_nome'] = $noticia->categoria->nome;
-            unset($dados['updated_at'], $dados['categoria'], $dados['usuario_id'], $dados['ativo']);
+            unset($dados['updated_at'], $dados['categoria'], $dados['usuario_id']);
 
             return $dados;
         });
